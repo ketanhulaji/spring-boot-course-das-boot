@@ -43,4 +43,31 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
     </dependencies>
+         
+         
+         <build>
+		<plugins>
+			
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>spring-boot</classifier>
+							<mainClass>
+								com.eatza.customer.CustomerserviceApplication
+							</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>das-boot</finalName>
+	</build>
+
+
 </project>
