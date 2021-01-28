@@ -12,12 +12,17 @@ public class Shipwreck {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+     @Column(name = "`description`")
     private String description;
+     @Column(name = "`condition`")
     private String condition;
     @Column(name = "`depth`")
     private Integer depth;
+    @Column(name = "`latitude`")
     private Double latitude;
+    @Column(name = "`longitude`")
     private Double longitude;
+     @Column(name = "`yearDiscovered`")
     private Integer yearDiscovered;
 
     public Shipwreck() {
