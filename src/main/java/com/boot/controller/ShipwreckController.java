@@ -27,19 +27,19 @@ public class ShipwreckController {
 
     @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.GET)
     public Shipwreck get(@PathVariable Long id) {
-        return shipwreckRepository.findById(id);
+        return shipwreckRepository.findById(id).get();
     }
 
     @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.PUT)
     public Shipwreck update(@PathVariable Long id, @RequestBody Shipwreck shipwreck) {
-        Shipwreck existingShipwreck = shipwreckRepository.findById(id);
+        Shipwreck existingShipwreck = shipwreckRepository.findById(id).get();
         BeanUtils.copyProperties(shipwreck, existingShipwreck);
         return shipwreckRepository.save(existingShipwreck);
     }
 
     @RequestMapping(value = "shipwrecks/{id}", method = RequestMethod.DELETE)
     public Shipwreck delete(@PathVariable Long id) {
-        Shipwreck existingShipwreck = shipwreckRepository.findById(id);
+        Shipwreck existingShipwreck = shipwreckRepository.findById(id).get();
         shipwreckRepository.delete(existingShipwreck);
         return existingShipwreck;
     }
