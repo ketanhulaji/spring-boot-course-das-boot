@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Column;
 
 @Entity
 public class Shipwreck {
@@ -13,6 +14,7 @@ public class Shipwreck {
     private String name;
     private String description;
     private String condition;
+    @Column(name = "`depth`")
     private Integer depth;
     private Double latitude;
     private Double longitude;
